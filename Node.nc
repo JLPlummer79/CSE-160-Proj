@@ -22,6 +22,10 @@ module Node{
    uses interface SimpleSend as Sender;
 
    uses interface CommandHandler;
+
+   uses interface Flood;      //JLP
+
+   uses interface NeighDisc;  //JLP
 }
 
 implementation{
@@ -63,6 +67,8 @@ implementation{
       dbg(GENERAL_CHANNEL, "PING EVENT \n");
       makePack(&sendPackage, TOS_NODE_ID, destination, 0, 0, 0, payload, PACKET_MAX_PAYLOAD_SIZE);
       call Sender.send(sendPackage, destination);
+      call Flood.pass();   //JLP test 9.17.24
+      call NeighDisc.pass(); //JLP test 9.17.24
    }
 
    event void CommandHandler.printNeighbors(){}

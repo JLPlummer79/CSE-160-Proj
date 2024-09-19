@@ -13,6 +13,7 @@ class TestSim:
     CMD_PING = 0
     CMD_NEIGHBOR_DUMP = 1
     CMD_ROUTE_DUMP=3
+    CMD_BROADCAST = 7
 
     # CHANNELS - see includes/channels.h
     COMMAND_CHANNEL="command";
@@ -129,6 +130,9 @@ class TestSim:
         print 'Adding Channel', channelName;
         self.t.addChannel(channelName, out);
 
+    def flood(self, source, dest, msg):
+        self.sendCMD(self.CMD_BROADCAST, source, "{0}{1}".format(chr(dest), msg));
+
 def main():
     s = TestSim();
     s.runTime(10);
@@ -137,6 +141,7 @@ def main():
     s.bootAll();
     s.addChannel(s.COMMAND_CHANNEL);
     s.addChannel(s.GENERAL_CHANNEL);
+    s.addChannel(s.FLOODING_CHANNEL);
 
     s.runTime(20);
     s.ping(1, 2, "Hello, World");

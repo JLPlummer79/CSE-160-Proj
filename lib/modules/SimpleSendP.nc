@@ -52,6 +52,10 @@ implementation{
        // us to allocate space in a pool where pointers can be retrieved. See
        // SimpleSendC to see where we allocate space. Be sure to put the values
        // back into the queue once you are done.
+
+       //JLP 9/7/24 adding to find out if I can print a message...
+      dbg(GENERAL_CHANNEL, "Simple Send send entry test\n"); 
+      //end test JLP 9/7/24
       if(!call Pool.empty()){
          sendInfo *input;
 

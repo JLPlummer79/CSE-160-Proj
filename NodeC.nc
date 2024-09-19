@@ -30,4 +30,12 @@ implementation {
 
     components CommandHandlerC;
     Node.CommandHandler -> CommandHandlerC;
+
+    //JLP Flood Wiring
+    components FloodC;
+    Node.Flood -> FloodC;
+
+    //JLP NeighDiscovery wiring
+    components NeighDiscC; 
+    Node.NeighDisc -> NeighDiscC;
 }

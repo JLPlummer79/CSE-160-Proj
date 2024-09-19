@@ -1,6 +1,7 @@
 //Author: UCM ANDES Lab
 //$Author: abeltran2 $
 //$LastChangedDate: 2014-06-16 13:16:24 -0700 (Mon, 16 Jun 2014) $
+//Added PROTOCOL_BROADCAST = 7
 
 #ifndef PROTOCOL_H
 #define PROTOCOL_H
@@ -13,6 +14,7 @@ enum{
 	PROTOCOL_NAME = 3,
 	PROTOCOL_TCP= 4,
 	PROTOCOL_DV = 5,
+	PROTOCOL_BROADCAST = 7,
    PROTOCOL_CMD = 99
 };
 

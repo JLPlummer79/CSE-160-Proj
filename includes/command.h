@@ -4,6 +4,7 @@
  * $LastChangedDate: 2014-06-16 13:16:24 -0700 (Mon, 16 Jun 2014) $
  * Description: Processes commands and returns an Command ID Number.
  */
+ //added CMD_BROADCAST to elict a particular response JLP 9.9.24
 
 #ifndef COMMAND_H
 #define COMMAND_H
@@ -17,6 +18,7 @@ enum{
 	CMD_TEST_CLIENT=4,
 	CMD_TEST_SERVER=5,
 	CMD_KILL=6,
+	CMD_BROADCAST=7,
 	CMD_ERROR=9
 };
 
